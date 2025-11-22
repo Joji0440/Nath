@@ -344,7 +344,10 @@ export function Garden() {
                 <div className="prompt-box" style={{ maxWidth:'70vmin' }}>
                   <h3>✉️ Para Nathaly 🩷 </h3>
                   <p style={{ fontSize:'2.2vmin', color:'#fff', lineHeight:1.6 }}>
-                  aqui voy a poner el mensajito 
+                    Hoy quiero desearte un cumpleaños lleno de alegría, y que esa felicidad te acompañe hoy, mañana y siempre. También quiero recordarte lo especial que eres para mí. Cada momento que hemos compartido se ha convertido en un tesoro que guardo con todo el cariño de mi corazón.<br/><br/>
+                    Tu sonrisa ilumina mis días, tu presencia abraza mi alma y hace que todo cobre un brillo distinto. Eres increíble y llena de bondad, de alegría y de una energía que contagia a cualquiera que tengas cerca.<br/><br/>
+                    Gracias por ser tú, por despertar emociones hermosas en mí cada vez que te miro y por volver mi mundo un lugar más vivo y más bonito simplemente con estar.<br/><br/>
+                    Feliz cumpleaños.Te quiero Mucho...Realmente Mucho❤️<br/> 
                   </p>
                 </div>
               </div>
