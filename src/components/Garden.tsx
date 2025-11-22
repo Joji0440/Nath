@@ -135,7 +135,7 @@ export function Garden() {
   const [finalScore, setFinalScore] = useState<number|null>(null)
   const [challengeOutcome, setChallengeOutcome] = useState<{win:boolean; score:number} | null>(null)
   const [countdown, setCountdown] = useState(3)
-  const [envelopeClicks, setEnvelopeClicks] = useState(0)
+  const [, setEnvelopeClicks] = useState(0)
   const [envelopePos, setEnvelopePos] = useState<{top:number; left:number}>({ top: 50, left: 50 })
   const [teaseMsg, setTeaseMsg] = useState<string>('')
 
