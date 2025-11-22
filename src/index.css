@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --bg-from: 255 241 242; /* rose-50 */
+  --bg-to: 255 247 237;   /* orange-50 */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Animated gradient blobs for the background */
+.blob {
+  position: absolute;
+  filter: blur(40px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation: float 16s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  25% { transform: translateY(-6%) translateX(4%) scale(1.05); }
+  50% { transform: translateY(2%) translateX(-3%) scale(1.02); }
+  75% { transform: translateY(-4%) translateX(-2%) scale(1.06); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* Soft text glow utility */
+.text-glow {
+  text-shadow: 0 2px 16px rgba(255, 128, 171, 0.35);
+}
+
+/* Button shine hover */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -150% -20%;
+  background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.4) 50%, transparent 60%);
+  transform: translateX(-100%);
+}
+.shine:hover::after {
+  animation: shine 900ms ease;
+}
+@keyframes shine {
+  100% { transform: translateX(100%); }
+}
+
+/* Subtle edge darkening for space feel */
+.vignette {
+  background: radial-gradient(60% 60% at 50% 50%, transparent 0%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.7) 100%);
+}
