@@ -140,7 +140,6 @@ export function Garden() {
   const [teaseMsg, setTeaseMsg] = useState<string>('')
 
   useEffect(() => {
-    // Aparece el botón después de que termina la secuencia de crecimiento (~6s)
     const t = setTimeout(() => setShowPlay(true), 6000)
     return () => clearTimeout(t)
   }, [])
@@ -274,7 +273,7 @@ export function Garden() {
             {stage==='challengeInstructions' && (
               <div className="prompt-overlay">
                 <div className="prompt-box" style={{ maxWidth:'60vmin' }}>
-                  <h3>Debes atrapar 20 corazones 🩷 en 10 segundos</h3>
+                  <h3>Debes atrapar 12 corazones 🩷 en 15 segundos</h3>
                   <p style={{ fontSize:'2.2vmin', margin:'1vmin 0 2vmin', color:'#fff' }}>¿Estas lista? 😏</p>
                   <div style={{ display:'flex', justifyContent:'center' }}>
                     <button className="option-btn" onClick={() => { setCountdown(3); setStage('challengeCountdown') }}>Estoy lista</button>
@@ -290,16 +289,16 @@ export function Garden() {
               </div>
             )}
             {stage==='gameChallenge' && (
-              <HeartClickGame durationSeconds={10} targetScore={20} onComplete={handleChallengeComplete} />
+              <HeartClickGame durationSeconds={15} targetScore={12} onComplete={handleChallengeComplete} />
             )}
             {stage==='challengeResult' && challengeOutcome && (
-              <ChallengeResult win={false} score={challengeOutcome.score} target={20} onRetry={retryChallenge} />
+              <ChallengeResult win={false} score={challengeOutcome.score} target={12} onRetry={retryChallenge} />
             )}
             {stage==='challengeWinMessage' && (
               <div className="prompt-overlay">
                 <div className="prompt-box" style={{ maxWidth:'66vmin' }}>
-                  <h3>Eres muy buena 😧.. pero no te lo dejaré fácil 😤</h3>
-                  <p style={{ fontSize:'2.2vmin', color:'#fff', margin:'1vmin 0 2vmin' }}>Veamos si puedes con 3 segundos menos 😏</p>
+                  <h3>¡Eres muy buena!😧 pero no te la dejare tan facil!! 😤</h3>
+                  <p style={{ fontSize:'2.2vmin', color:'#fff', margin:'1vmin 0 2vmin' }}>Misma meta: 12 corazones, pero con 12 segundos ⏱️</p>
                   <div style={{ display:'flex', justifyContent:'center' }}>
                     <button className="option-btn" onClick={() => setStage('gameChallenge2')}>Vamos</button>
                   </div>
@@ -307,10 +306,10 @@ export function Garden() {
               </div>
             )}
             {stage==='gameChallenge2' && (
-              <HeartClickGame durationSeconds={7} targetScore={20} onComplete={handleChallenge2Complete} />
+              <HeartClickGame durationSeconds={12} targetScore={12} onComplete={handleChallenge2Complete} />
             )}
             {stage==='challenge2Result' && challengeOutcome && (
-              <ChallengeResult win={false} score={challengeOutcome.score} target={20} onRetry={() => setStage('gameChallenge2')} />
+              <ChallengeResult win={false} score={challengeOutcome.score} target={12} onRetry={() => setStage('gameChallenge2')} />
             )}
             {stage==='letterTease' && (
               <div className="prompt-overlay" style={{ pointerEvents:'auto' }}>
